@@ -1718,7 +1718,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &874983277
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1754,8 +1754,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 308d3ce55ec7f7d4f9a406663bb0dd5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  difficulty_Menu: {fileID: 0}
-  gamemode_Menu: {fileID: 0}
+  difficulty_Menu: {fileID: 1126756018}
+  gamemode_Menu: {fileID: 874983276}
 --- !u!1 &887935423
 GameObject:
   m_ObjectHideFlags: 0
@@ -2325,7 +2325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   main_Menu: {fileID: 319810502}
   difficulty_Menu: {fileID: 1126756018}
-  gamemode_Menu: {fileID: 0}
+  gamemode_Menu: {fileID: 874983276}
 --- !u!1 &1130814749
 GameObject:
   m_ObjectHideFlags: 0
