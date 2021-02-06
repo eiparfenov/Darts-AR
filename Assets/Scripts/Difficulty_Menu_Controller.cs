@@ -8,6 +8,7 @@ public class Difficulty_Menu_Controller : MonoBehaviour
 
     [SerializeField] GameObject main_Menu;
     [SerializeField] GameObject difficulty_Menu;
+    [SerializeField] GameObject gamemode_Menu;
 
     public void Back_Button_Press()
     {
@@ -37,6 +38,7 @@ public class Difficulty_Menu_Controller : MonoBehaviour
     }
     private void Open_Mode_Menu()
     {
-        Debug.Log(Difficulty_Menu_Controller.selected_difficulty);
+        gamemode_Menu.SetActive(true);
+        difficulty_Menu.SetActive(false);
     }
 }
