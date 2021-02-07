@@ -30,6 +30,10 @@ public class Game_Controller : MonoBehaviour
     // Дротики в мишени
     List<GameObject> darts_In_Target = new List<GameObject>();
 
+    // Менюшки
+    [SerializeField] GameObject in_Game_Menu;
+    [SerializeField] GameObject win_Menu;
+
     // Игрок может совершить бросок
     bool in_Game = true;
 
@@ -63,6 +67,14 @@ public class Game_Controller : MonoBehaviour
         if(Difficulty_Menu_Controller.selected_difficulty == "Practice")
         {
             Practice_Aim_Finish(finger_Position);
+        }
+    }
+    public void Win()
+    {
+        if (Difficulty_Menu_Controller.selected_difficulty == "Practice")
+        {
+            in_Game_Menu.SetActive(false);
+            win_Menu.SetActive(true);
         }
     }
 
@@ -125,12 +137,7 @@ public class Game_Controller : MonoBehaviour
             dart_In_Aim_Controller.Deactivate_Dart();
             Set_Traectory_Point();
             darts_In_Target.Add(Shoot());
-            right_Scoreboard_Controller.Hit(finger_Position, darts_In_Target.Count);
-
-            if (darts_In_Target.Count >= 3)
-            {
-                in_Game = false;
-            }
+            in_Game = right_Scoreboard_Controller.Hit(finger_Position, darts_In_Target.Count);
         }
         else
         {

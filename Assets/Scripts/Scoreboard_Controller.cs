@@ -3,32 +3,60 @@ using System.Collections;
 
 public class Scoreboard_Controller : MonoBehaviour
 {
+    [SerializeField] GameObject game_Controller;
     string text;
     [SerializeField] int total_Score;
     [SerializeField] float target_Radius;
 
     [SerializeField] GameObject text_Field;
     TextMesh textMesh;
+    [SerializeField] GameObject score_Text_Field;
+    TextMesh score_textMesh;
 
     public void Start()
     {
         textMesh = text_Field.GetComponent<TextMesh>();
+        score_textMesh = score_Text_Field.GetComponent<TextMesh>();
         text = "Scoreboard\n";
         textMesh.text = text;
+        
     }
 
     public bool Hit(Vector2 hit_Position, int num)
     {
+        // Получение очков
         int points = Points(hit_Position);
-
-        total_Score += points;
-
-        text += points + " ";
-        if (num == 3)
+        bool multy2 = Multy2(hit_Position);
+        
+        if (total_Score + points == Gamemode_Menu_Controller.max_Score && multy2)
+        {
+            total_Score += points;
+            text += points + " ";
+            StartCoroutine(Print_Text());
+            StartCoroutine(Win());
+            return false;
+        }
+        else if (total_Score + points >= Gamemode_Menu_Controller.max_Score)
+        {
+            text += "-\n";
+            StartCoroutine(Print_Text());
+            return false;
+        }
+        else if (num == 3)
+        {
+            total_Score += points;
+            text += points + " ";
             text += "\n";
-
-        StartCoroutine(Print_Text());
-        return false;
+            StartCoroutine(Print_Text());
+            return false;
+        }
+        else
+        {
+            total_Score += points;
+            text += points + " ";
+            StartCoroutine(Print_Text());
+            return true;
+        }
     }
 
     // Определение количества очков
@@ -86,5 +114,20 @@ public class Scoreboard_Controller : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         textMesh.text = text;
+        score_textMesh.text = total_Score + "/" + Gamemode_Menu_Controller.max_Score;
+    }
+    private IEnumerator Win()
+    {
+        yield return new WaitForSeconds(1f);
+        game_Controller.GetComponent<Game_Controller>().Win();
+    }
+
+    private bool Multy2(Vector2 hit_Position)
+    {
+        float tr = target_Radius / 170; // Один шаг милиметра на мишени.
+        if (hit_Position.magnitude >= tr * 162 && hit_Position.magnitude < tr * 170)
+            return true;
+        else
+            return false;
     }
 }

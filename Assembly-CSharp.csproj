@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\Main_Menu_Controller.cs" />
     <Compile Include="Assets\Scripts\Pointer_Controller.cs" />
     <Compile Include="Assets\Scripts\Scoreboard_Controller.cs" />
+    <Compile Include="Assets\Scripts\Win_Menu_Controller.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

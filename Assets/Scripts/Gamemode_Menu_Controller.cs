@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Gamemode_Menu_Controller : MonoBehaviour
 {
-    public static int max_Score;
+    public static int max_Score = 301;
     public static bool play_With_AI;
 
     [SerializeField] GameObject difficulty_Menu;
