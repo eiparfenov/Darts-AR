@@ -13,6 +13,8 @@ public class Game_Controller : MonoBehaviour
     [SerializeField] GameObject main_Camera;
     [SerializeField] GameObject traectory_Point;
 
+    [SerializeField] GameObject pr_Dart;
+
     private void Start()
     {
         pointer_Controller = pointer.GetComponent<Pointer_Controller>();
@@ -36,6 +38,7 @@ public class Game_Controller : MonoBehaviour
         pointer_Controller.Deactivate_Pointer();
         dart_In_Aim_Controller.Deactivate_Dart();
         Set_Traectory_Point();
+        Shoot();
     }
 
     private void Set_Traectory_Point()
@@ -46,5 +49,17 @@ public class Game_Controller : MonoBehaviour
         float distance = (camera_Position - pointer_Position).magnitude;
         tractory_Point_Position.y += distance / 20;
         traectory_Point.transform.position = tractory_Point_Position;
+    }
+
+    private GameObject Shoot()
+    {
+        Debug.Log("Shoot");
+        GameObject shot = Instantiate(pr_Dart);
+        shot.GetComponent<Dart_Motion>().Setup(
+            dart_Zero_Position.transform.position,
+            traectory_Point.transform.position,
+            pointer.transform.position
+            );
+        return shot;
     }
 }

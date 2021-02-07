@@ -154,6 +154,7 @@ MonoBehaviour:
   dart_Zero_Position: {fileID: 1656023132}
   main_Camera: {fileID: 1399766715}
   traectory_Point: {fileID: 618084139}
+  pr_Dart: {fileID: 443338504140060196, guid: b45e05cee5066cb4eb66c772601ff526, type: 3}
 --- !u!4 &5490160
 Transform:
   m_ObjectHideFlags: 0
@@ -542,17 +543,17 @@ PrefabInstance:
     - target: {fileID: 8152310210049355440, guid: 71cdf42b606ee924aaee5bc93dacdd69,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.22763
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 8152310210049355440, guid: 71cdf42b606ee924aaee5bc93dacdd69,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.22763
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 8152310210049355440, guid: 71cdf42b606ee924aaee5bc93dacdd69,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.22763
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 8152310210049355440, guid: 71cdf42b606ee924aaee5bc93dacdd69,
         type: 3}

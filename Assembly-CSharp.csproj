@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Aim_Controller.cs" />
     <Compile Include="Assets\Scripts\Dart_In_Aim_Controller.cs" />
+    <Compile Include="Assets\Scripts\Dart_Motion.cs" />
     <Compile Include="Assets\Scripts\Difficulty_Menu_Controller.cs" />
     <Compile Include="Assets\Scripts\Game_Controller.cs" />
     <Compile Include="Assets\Scripts\Gamemode_Menu_Controller.cs" />
