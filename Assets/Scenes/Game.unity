@@ -155,6 +155,8 @@ MonoBehaviour:
   main_Camera: {fileID: 1399766715}
   traectory_Point: {fileID: 618084139}
   pr_Dart: {fileID: 443338504140060196, guid: b45e05cee5066cb4eb66c772601ff526, type: 3}
+  right_Scoreboard: {fileID: 1239343194}
+  left_Scoreboard: {fileID: 0}
 --- !u!4 &5490160
 Transform:
   m_ObjectHideFlags: 0
@@ -1508,6 +1510,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1209899741}
   m_CullTransparentMesh: 0
+--- !u!1 &1239343194
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1239343196}
+  - component: {fileID: 1239343195}
+  m_Layer: 0
+  m_Name: Scoreboard
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1239343195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239343194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9820b9fdc24ac2f4a844cb2d3a5f7092, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: 
+  target_Radius: 0
+--- !u!4 &1239343196
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239343194}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.6331673, y: 4.369858, z: -18.445648}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1336185979
 GameObject:
   m_ObjectHideFlags: 0

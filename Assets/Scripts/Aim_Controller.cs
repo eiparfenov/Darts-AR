@@ -29,7 +29,7 @@ public class Aim_Controller : MonoBehaviour, IDragHandler, IPointerDownHandler, 
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        game_Controller.Aim_Finish();
+        game_Controller.Aim_Finish(Conver_To_Pointer_Position(eventData.position));
     }
 
     private Vector2 Conver_To_Pointer_Position(Vector2 position)

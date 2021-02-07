@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class Dart_Motion : MonoBehaviour
 {
-    // Traectory points
+    // Точки для построения траектории
     Vector3 Point_1, Point_2, Point_3;
 
-    //parameter for interpolation
+    // Параметр для интеполяции
     float t;
 
-    //parameters of motion
+    // Параметр перемещения
     [SerializeField] float speed;
 
-    // for rotation
+    // Прдыдущая позиция для правильного поворота в полете
     Vector3 previous_position;
 
     public void Setup(Vector3 _Point_1, Vector3 _Point_2, Vector3 _Point_3)
@@ -25,12 +25,13 @@ public class Dart_Motion : MonoBehaviour
     }
 
     public void Update()
-    {
-        
+    { 
         if(t <= 1)
         {
             previous_position = transform.position;
             t += Time.deltaTime * speed;
+            // Интерполяция по кривой Безье
+            // p(t) = (1 - t)^2 * p0 + 2 * t * (t - 1) * p1 + t^2 * p2
             transform.position = Point_1 * (1 - t) * (1 - t)
                 + Point_2 * 2 * t * (1 - t)
                 + Point_3 * t * t;
