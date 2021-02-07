@@ -79,7 +79,6 @@ public class Game_Controller : MonoBehaviour
     private GameObject Shoot()
     {
         // Бросок
-        Debug.Log("Shoot");
         GameObject shot = Instantiate(pr_Dart);
         shot.GetComponent<Dart_Motion>().Setup(
             dart_Zero_Position.transform.position,
@@ -126,7 +125,7 @@ public class Game_Controller : MonoBehaviour
             dart_In_Aim_Controller.Deactivate_Dart();
             Set_Traectory_Point();
             darts_In_Target.Add(Shoot());
-            right_Scoreboard_Controller.Hit(finger_Position);
+            right_Scoreboard_Controller.Hit(finger_Position, darts_In_Target.Count);
 
             if (darts_In_Target.Count >= 3)
             {
